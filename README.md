@@ -33,11 +33,33 @@ HY-Motion Standard は公式案内で最低 26GB VRAM とされています。�
 
 ## 導入
 
-1. このリポジトリの `ComfyUI-Zasuko-HYMotion-Retarget` フォルダーを、ComfyUI の `custom_nodes` へコピーします。
+### Gitでの導入と更新
+
+初回のみ、ComfyUIの`custom_nodes`フォルダーで次を実行します。
+
+```powershell
+git clone https://github.com/zasuko/HY-Motion_Extensions_Text-to-Motion.git
+```
+
+次回以降の更新は、作成された`HY-Motion_Extensions_Text-to-Motion`フォルダーを開いて次を実行します。
+
+```powershell
+git pull
+```
+
+クローンしたフォルダー内の`ComfyUI-Zasuko-HYMotion-Retarget`を、ComfyUIの`custom_nodes`直下へ置きます。以降は`git pull`後にComfyUIを再起動します。
+
+1. Gitを使わない場合は、このリポジトリの `ComfyUI-Zasuko-HYMotion-Retarget` フォルダーを、ComfyUI の `custom_nodes` へコピーします。
 2. Blender をインストールします。
 3. Mixamo リグ済み T ポーズ FBX を `ComfyUI/input/3d/` へ置きます。例: `ComfyUI/input/3d/T-Pose.fbx`
 4. ComfyUI を再起動します。
 5. `workflows/HY-Motion_LIVE_QUALITY_Zasuko_Test_20260718.json` を読み込み、Load 3D と Retarget ノードのパスを自分の環境に合わせます。
+
+### 生成例
+
+HY-Motionで生成した人物モーションを、Mixamoリグ付きのTポーズFBXへ適用し、ComfyUI上でプレビューした例です。
+
+![ComfyUI workflow and successful retarget preview](assets/workflow-success.png)
 
 ## 配線
 
@@ -69,24 +91,3 @@ Load 3D はターゲット FBX を選ぶためと、元モデルのプレビュ�
 - 腕のクリアランス角度・接地補正のUI化
 - IK（逆運動学）による足滑り・めり込みの改善
 - Blender 4.x / 5.x の互換性テスト
-## 生成例
-
-HY-Motionで生成した人物モーションを、Mixamoリグ付きのTポーズFBXへ適用し、ComfyUI上でプレビューした例です。
-
-![ComfyUI workflow and successful retarget preview](assets/workflow-success.png)
-
-## Gitでの導入と更新
-
-初回のみ、ComfyUIの`custom_nodes`フォルダーで次を実行します。
-
-```powershell
-git clone https://github.com/zasuko/HY-Motion_Extensions_Text-to-Motion.git
-```
-
-次回以降の更新は、作成された`HY-Motion_Extensions_Text-to-Motion`フォルダーを開いて次を実行します。
-
-```powershell
-git pull
-```
-
-その後、`ComfyUI-Zasuko-HYMotion-Retarget`フォルダーをComfyUIの`custom_nodes`直下へ置き、ComfyUIを再起動します。
