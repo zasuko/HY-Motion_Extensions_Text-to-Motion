@@ -37,7 +37,7 @@ HY-Motion Standard は公式案内で最低 26GB VRAM とされています。�
 2. Blender をインストールします。
 3. Mixamo リグ済み T ポーズ FBX を `ComfyUI/input/3d/` へ置きます。例: `ComfyUI/input/3d/T-Pose.fbx`
 4. ComfyUI を再起動します。
-5. `workflows/HY-Motion_LIVE_QUALITY_Zasuko_Test_20260718.json` を読み込み、Load 3D と Retarget ノードのパスを自分の環境に合わせます。
+5. 最新版の `workflows/HY-Motion_LIVE_QUALITY_Zasuko_Test_20260718-3.json` を読み込み、Load 3D と Retarget ノードのパスを自分の環境に合わせます。Google Colab では `blender_path` を `/content/blender-4.3.2-linux-x64/blender` に、Windowsローカルでは Blender の `blender.exe` の実パスに設定してください。
 
 ## 配線
 
