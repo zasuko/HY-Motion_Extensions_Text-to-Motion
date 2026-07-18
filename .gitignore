@@ -1,0 +1,10 @@
+# Never publish downloaded models, character assets, or generated files
+models/
+input/
+output/
+*.fbx
+*.glb
+*.blend
+__pycache__/
+*.pyc
+

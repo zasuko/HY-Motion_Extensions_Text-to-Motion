@@ -1,0 +1,626 @@
+{
+  "id": "49fbd9ce-342c-4413-82b6-296fb9633dc5",
+  "revision": 0,
+  "last_node_id": 16,
+  "last_link_id": 19,
+  "nodes": [
+    {
+      "id": 12,
+      "type": "HYMotionLoadLLM",
+      "pos": [
+        -3862.507601928313,
+        -2906.3975411213596
+      ],
+      "size": [
+        310.95052083333337,
+        106
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "llm",
+          "type": "HYMOTION_LLM",
+          "links": [
+            12
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "HYMotionLoadLLM"
+      },
+      "widgets_values": [
+        "Qwen3-8B-bnb-4bit",
+        "bnb-4bit",
+        false
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 4,
+      "type": "HYMotionLoadNetwork",
+      "pos": [
+        -3869.2205035898887,
+        -3031.1373128045343
+      ],
+      "size": [
+        315.4781746026171,
+        58
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "network",
+          "type": "HYMOTION_NET",
+          "links": [
+            3
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "HYMotionLoadNetwork"
+      },
+      "widgets_values": [
+        "HY-Motion-1.0"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 16,
+      "type": "ZasukoHYMotionRetarget",
+      "pos": [
+        -3501.0153114508353,
+        -2706.165707049972
+      ],
+      "size": [
+        495.0351227303054,
+        229.65827653546012
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source_fbx_paths",
+          "type": "STRING",
+          "link": 17
+        },
+        {
+          "name": "target_fbx_path",
+          "type": "STRING",
+          "widget": {
+            "name": "target_fbx_path"
+          },
+          "link": 19
+        }
+      ],
+      "outputs": [
+        {
+          "name": "fbx_paths",
+          "type": "STRING",
+          "links": [
+            18
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ZasukoHYMotionRetarget"
+      },
+      "widgets_values": [
+        "3d/T-Pose.fbx",
+        "hymotion_fbx/zasuko",
+        "Zasuko",
+        "C:\\Program Files\\Blender Foundation\\Blender 5.1\\blender.exe"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 10,
+      "type": "HYMotionEncodeText",
+      "pos": [
+        -3503.664365395338,
+        -2926.6593509354143
+      ],
+      "size": [
+        495.49001845057944,
+        145.73759633274085
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "llm",
+          "type": "HYMOTION_LLM",
+          "link": 12
+        }
+      ],
+      "outputs": [
+        {
+          "name": "conditioning",
+          "type": "HYMOTION_COND",
+          "links": [
+            10
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "HYMotionEncodeText"
+      },
+      "widgets_values": [
+        "The stylized female character is using her arms and legs with all her might, moving her entire body vigorously as she dashes at full speed like an athlete."
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 14,
+      "type": "Load3D",
+      "pos": [
+        -3865.6897382955176,
+        -2745.951678563001
+      ],
+      "size": [
+        327.4697746625761,
+        534.8091749079122
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": null
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": null
+        },
+        {
+          "name": "mesh_path",
+          "type": "STRING",
+          "links": [
+            19
+          ]
+        },
+        {
+          "name": "normal",
+          "type": "IMAGE",
+          "links": null
+        },
+        {
+          "name": "camera_info",
+          "type": "LOAD3D_CAMERA",
+          "links": null
+        },
+        {
+          "name": "recording_video",
+          "type": "VIDEO",
+          "links": null
+        },
+        {
+          "name": "model_3d",
+          "type": "FILE_3D",
+          "links": null
+        },
+        {
+          "name": "model_3d_info",
+          "type": "LOAD3D_MODEL_INFO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Resource Folder": "",
+        "Node name for S&R": "Load3D",
+        "Camera Config": {
+          "cameraType": "perspective",
+          "fov": 35,
+          "state": {
+            "position": {
+              "x": 89.9849674262236,
+              "y": 70.06217914367461,
+              "z": 162.9943324375158
+            },
+            "target": {
+              "x": -13.441665779400996,
+              "y": 2.137428424634193,
+              "z": -21.775420072874113
+            },
+            "zoom": 1,
+            "cameraType": "perspective",
+            "quaternion": {
+              "x": -0.14957905862473664,
+              "y": 0.24935925449314167,
+              "z": 0.03901586914068136,
+              "w": 0.9559936345890382
+            },
+            "fov": 35,
+            "aspect": 1,
+            "near": 0.01,
+            "far": 10000,
+            "frustum": {
+              "left": -5,
+              "right": 5,
+              "top": 5,
+              "bottom": -5
+            }
+          }
+        },
+        "Light Config": {
+          "intensity": 3.5,
+          "hdri": {
+            "enabled": false,
+            "hdriPath": "",
+            "showAsBackground": false,
+            "intensity": 1
+          }
+        },
+        "Scene Config": {
+          "showGrid": false,
+          "backgroundColor": "#282828",
+          "backgroundImage": "",
+          "backgroundRenderMode": "tiled",
+          "models": [
+            {
+              "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              },
+              "quaternion": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+              }
+            }
+          ]
+        },
+        "Model Config": {
+          "upDirection": "original",
+          "materialMode": "original",
+          "showSkeleton": false,
+          "gizmo": {
+            "enabled": false,
+            "mode": "translate",
+            "position": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        }
+      },
+      "widgets_values": [
+        "3d/T-Pose.fbx",
+        "upload3dmodel",
+        "uploadExtraResources",
+        "clear",
+        "",
+        1024,
+        1024
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 5,
+      "type": "HYMotionGenerate",
+      "pos": [
+        -2972.74479175569,
+        -3027.429294260189
+      ],
+      "size": [
+        244.1953502935482,
+        174.8390519682912
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "network",
+          "type": "HYMOTION_NET",
+          "link": 3
+        },
+        {
+          "name": "conditioning",
+          "type": "HYMOTION_COND",
+          "link": 10
+        }
+      ],
+      "outputs": [
+        {
+          "name": "motion_data",
+          "type": "HYMOTION_DATA",
+          "links": [
+            7
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "HYMotionGenerate"
+      },
+      "widgets_values": [
+        3,
+        1513315335,
+        "randomize",
+        5,
+        1
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 8,
+      "type": "HYMotionExportFBX",
+      "pos": [
+        -2703.3619405303552,
+        -3021.4557934888107
+      ],
+      "size": [
+        340.69322091412323,
+        165.44164335533833
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "motion_data",
+          "type": "HYMOTION_DATA",
+          "link": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "fbx_paths",
+          "type": "STRING",
+          "links": [
+            17
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "HYMotionExportFBX"
+      },
+      "widgets_values": [
+        "hymotion_fbx/live_demo",
+        "quality_standard_wave_seed424242",
+        "",
+        0,
+        0
+      ],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 9,
+      "type": "Preview3D",
+      "pos": [
+        -2964.3389905790486,
+        -2746.148506228622
+      ],
+      "size": [
+        588.0391301560021,
+        576.7917908415524
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "camera_info",
+          "shape": 7,
+          "type": "LOAD3D_CAMERA",
+          "link": null
+        },
+        {
+          "name": "bg_image",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "name": "model_file",
+          "type": "STRING,FILE_3D_GLB,FILE_3D_GLTF,FILE_3D_FBX,FILE_3D_OBJ,FILE_3D_STL,FILE_3D_USDZ,FILE_3D",
+          "widget": {
+            "name": "model_file"
+          },
+          "link": 18
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "Preview3D",
+        "Scene Config": {
+          "showGrid": true,
+          "backgroundColor": "#282828",
+          "backgroundImage": "",
+          "backgroundRenderMode": "tiled",
+          "models": [
+            {
+              "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              },
+              "quaternion": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+              }
+            }
+          ]
+        },
+        "Camera Config": {
+          "cameraType": "perspective",
+          "fov": 35,
+          "state": {
+            "position": {
+              "x": 1.7207229786867488,
+              "y": 0.6358586606584559,
+              "z": -0.43958945915703057
+            },
+            "target": {
+              "x": 0.2120032079314921,
+              "y": 0.4690938223771469,
+              "z": 0.0006265390386117935
+            },
+            "zoom": 1,
+            "cameraType": "perspective"
+          }
+        },
+        "Light Config": {
+          "intensity": 3,
+          "hdri": {
+            "enabled": false,
+            "hdriPath": "",
+            "showAsBackground": false,
+            "intensity": 1
+          }
+        },
+        "Model Config": {
+          "upDirection": "original",
+          "materialMode": "original",
+          "showSkeleton": false,
+          "gizmo": {
+            "enabled": false,
+            "mode": "translate",
+            "position": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        },
+        "Resource Folder": "zasuko",
+        "Last Time Model File": "hymotion_fbx/zasuko/quality_standard_wave_seed424242_20260718_022450170_2f1517f3_000_Zasuko_20260718_022450_374_65eae1_preview.glb"
+      },
+      "widgets_values": [
+        "hymotion_fbx/zasuko/quality_standard_wave_seed424242_20260718_022450170_2f1517f3_000_Zasuko_20260718_022450_374_65eae1_preview.glb",
+        ""
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    }
+  ],
+  "links": [
+    [
+      3,
+      4,
+      0,
+      5,
+      0,
+      "HYMOTION_NET"
+    ],
+    [
+      7,
+      5,
+      0,
+      8,
+      0,
+      "HYMOTION_DATA"
+    ],
+    [
+      10,
+      10,
+      0,
+      5,
+      1,
+      "HYMOTION_COND"
+    ],
+    [
+      12,
+      12,
+      0,
+      10,
+      0,
+      "HYMOTION_LLM"
+    ],
+    [
+      17,
+      8,
+      0,
+      16,
+      0,
+      "STRING"
+    ],
+    [
+      18,
+      16,
+      0,
+      9,
+      2,
+      "STRING"
+    ],
+    [
+      19,
+      14,
+      2,
+      16,
+      1,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.7400249944258277,
+      "offset": [
+        4214.700732272825,
+        3185.0930435524906
+      ]
+    },
+    "workflowRendererVersion": "LG",
+    "frontendVersion": "1.45.21",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4
+}
