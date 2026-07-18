@@ -1,6 +1,6 @@
 # HY-Motion Extensions: Text-to-Motion → Mixamo FBX Retarget
 
-ComfyUI 上で HY-Motion が生成した人型モーションを、Mixamo リグの T ポーズ FBX キャラクターへ適用する **Windows 向けベータ拡張**です。Blender をバックグラウンド実行し、納品用 FBX と ComfyUI Preview3D 用 GLB を出力します。
+ComfyUI 上で HY-Motion が生成した人型モーションを、Mixamo リグの T ポーズ FBX キャラクターへ適用する **Windows／Google Colab 向けベータ拡張**です。Blender をバックグラウンド実行し、納品用 FBX と ComfyUI Preview3D 用 GLB を出力します。
 
 > これは HY-Motion の生成モデル本体ではありません。モデル重み、キャラクター FBX、テクスチャは同梱していません。
 
@@ -45,7 +45,7 @@ HY-Motion Standard は公式案内で最低 26GB VRAM とされています。�
 3. Blenderをインストールします。
 4. Mixamoリグ済みのTポーズFBXを`ComfyUI/input/3d/`へ置きます。例: `ComfyUI/input/3d/T-Pose.fbx`
 5. ComfyUIを再起動します。
-6. `workflows/HY-Motion_LIVE_QUALITY_Zasuko_Test_20260718.json`を読み込み、Load 3DとRetargetノードのパスを自分の環境に合わせます。
+6. ローカルPCでは `workflows/HY-Motion_LIVE_QUALITY_Zasuko_Test_20260718.json`、Google Colabでは `workflows/HY-Motion_Colab_Retarget_20260718.json` を読み込みます。Load 3DとRetargetノードのパスを自分の環境に合わせてください。
 
 更新時は、`HY-Motion_Extensions_Text-to-Motion`フォルダーを開いて次を実行します。完了後、`ComfyUI-Zasuko-HYMotion-Retarget`フォルダーをもう一度`custom_nodes`へコピーして上書きし、ComfyUIを再起動します。
 
@@ -56,6 +56,13 @@ git pull
 ### Gitを使わない方法
 
 このリポジトリをZIPでダウンロードして展開し、`ComfyUI-Zasuko-HYMotion-Retarget`フォルダーをComfyUIの`custom_nodes`直下へコピーします。その後は上の手順3から6を行います。
+
+## 同梱ワークフロー
+
+- `workflows/HY-Motion_LIVE_QUALITY_Zasuko_Test_20260718.json`: Windowsローカル版。`blender_path` は自分の `blender.exe` に合わせます。
+- `workflows/HY-Motion_Colab_Retarget_20260718.json`: Google Colab動作確認版。`blender_path` は `/content/blender-4.3.2-linux-x64/blender` を設定済みです。
+
+どちらもキャラクターFBXとテクスチャ画像を `ComfyUI/input/3d/` にまとめて配置し、Load 3DノードでFBXを選択します。
 
 ## 配線
 
