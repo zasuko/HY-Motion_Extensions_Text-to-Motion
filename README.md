@@ -69,3 +69,24 @@ Load 3D はターゲット FBX を選ぶためと、元モデルのプレビュ�
 - 腕のクリアランス角度・接地補正のUI化
 - IK（逆運動学）による足滑り・めり込みの改善
 - Blender 4.x / 5.x の互換性テスト
+## 生成例
+
+HY-Motionで生成した人物モーションを、Mixamoリグ付きのTポーズFBXへ適用し、ComfyUI上でプレビューした例です。
+
+![ComfyUI workflow and successful retarget preview](assets/workflow-success.png)
+
+## Gitでの導入と更新
+
+初回のみ、ComfyUIの`custom_nodes`フォルダーで次を実行します。
+
+```powershell
+git clone https://github.com/zasuko/HY-Motion_Extensions_Text-to-Motion.git
+```
+
+次回以降の更新は、作成された`HY-Motion_Extensions_Text-to-Motion`フォルダーを開いて次を実行します。
+
+```powershell
+git pull
+```
+
+その後、`ComfyUI-Zasuko-HYMotion-Retarget`フォルダーをComfyUIの`custom_nodes`直下へ置き、ComfyUIを再起動します。
