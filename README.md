@@ -33,11 +33,29 @@ HY-Motion Standard は公式案内で最低 26GB VRAM とされています。�
 
 ## 導入
 
-1. このリポジトリの `ComfyUI-Zasuko-HYMotion-Retarget` フォルダーを、ComfyUI の `custom_nodes` へコピーします。
-2. Blender をインストールします。
-3. Mixamo リグ済み T ポーズ FBX を `ComfyUI/input/3d/` へ置きます。例: `ComfyUI/input/3d/T-Pose.fbx`
-4. ComfyUI を再起動します。
-5. `workflows/HY-Motion_LIVE_QUALITY_Zasuko_Test_20260718.json` を読み込み、Load 3D と Retarget ノードのパスを自分の環境に合わせます。
+### Gitを使う方法（推奨）
+
+1. ComfyUIの`custom_nodes`フォルダーを開き、初回だけ次を実行します。
+
+   ```powershell
+   git clone https://github.com/zasuko/HY-Motion_Extensions_Text-to-Motion.git
+   ```
+
+2. 作成された`HY-Motion_Extensions_Text-to-Motion`フォルダー内の`ComfyUI-Zasuko-HYMotion-Retarget`を、ComfyUIの`custom_nodes`直下へコピーします。
+3. Blenderをインストールします。
+4. Mixamoリグ済みのTポーズFBXを`ComfyUI/input/3d/`へ置きます。例: `ComfyUI/input/3d/T-Pose.fbx`
+5. ComfyUIを再起動します。
+6. `workflows/HY-Motion_LIVE_QUALITY_Zasuko_Test_20260718.json`を読み込み、Load 3DとRetargetノードのパスを自分の環境に合わせます。
+
+更新時は、`HY-Motion_Extensions_Text-to-Motion`フォルダーを開いて次を実行します。完了後、`ComfyUI-Zasuko-HYMotion-Retarget`フォルダーをもう一度`custom_nodes`へコピーして上書きし、ComfyUIを再起動します。
+
+```powershell
+git pull
+```
+
+### Gitを使わない方法
+
+このリポジトリをZIPでダウンロードして展開し、`ComfyUI-Zasuko-HYMotion-Retarget`フォルダーをComfyUIの`custom_nodes`直下へコピーします。その後は上の手順3から6を行います。
 
 ## 配線
 
@@ -75,18 +93,3 @@ HY-Motionで生成した人物モーションを、Mixamoリグ付きのTポー�
 
 ![ComfyUI workflow and successful retarget preview](assets/workflow-success.png)
 
-## Gitでの導入と更新
-
-初回のみ、ComfyUIの`custom_nodes`フォルダーで次を実行します。
-
-```powershell
-git clone https://github.com/zasuko/HY-Motion_Extensions_Text-to-Motion.git
-```
-
-次回以降の更新は、作成された`HY-Motion_Extensions_Text-to-Motion`フォルダーを開いて次を実行します。
-
-```powershell
-git pull
-```
-
-その後、`ComfyUI-Zasuko-HYMotion-Retarget`フォルダーをComfyUIの`custom_nodes`直下へ置き、ComfyUIを再起動します。
